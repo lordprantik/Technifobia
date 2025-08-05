@@ -1,74 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Techni_Fobia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techni_Fobia - Home</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #f4f7fa;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f0f;
+      background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #f0f0f0;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
       min-height: 100vh;
-    }
-
-    .container {
-      max-width: 500px;
-      width: 90%;
-      background: white;
       padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
       text-align: center;
+      padding: 2rem 1rem;
     }
 
-    h1 {
-      color: #007bff;
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #00ffe5;
+      text-shadow: 0 0 10px #00ffe5, 0 0 20px #0061ff;
     }
 
-    p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
     }
 
-    .link-list {
+    nav {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
     }
 
-    .link-list a {
-      background-color: #ff5722;
-      color: white;
-      padding: 12px;
-      border-radius: 10px;
+    nav a {
       text-decoration: none;
+      background: linear-gradient(135deg, #00ffe5, #0061ff);
+      color: #000;
+      padding: 0.9rem 1.7rem;
+      border-radius: 12px;
       font-weight: 600;
-      transition: background 0.3s ease;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
     }
 
-    .link-list a:hover {
-      background-color: #e64a19;
+    nav a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+      transition: background 0.3s;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #00ffe5;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #00ffe5;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Welcome to <span style="color: #0056d2;">Techni_Fobia</span></h1>
-    <p>This is your tech affiliate site.</p>
-    <div class="link-list">
-      <a href="gpus.html">Explore GPUs</a>
-      <a href="cpus.html">Compare CPUs</a>
-      <a href="laptops.html">Top Laptops</a>
-      <a href="monitors.html">Best Monitors</a>
-    </div>
+  <div class="overlay">
+    <header>
+      <h1>Techni_Fobia</h1>
+      <p>Your Trusted Guide to GPUs, CPUs, Laptops & Monitors</p>
+    </header>
+
+    <nav>
+      <a href="#gpu">GPU</a>
+      <a href="#cpu">CPU</a>
+      <a href="#laptops">Laptops</a>
+      <a href="#monitors">Monitors</a>
+    </nav>
+
+    <section id="gpu">
+      <h2>Graphic Cards (GPU)</h2>
+      <p>Discover the best GPUs for gaming, productivity, and creative work. We cover NVIDIA, AMD, and Intel Arc with in-depth guides and affiliate links for smart buys.</p>
+    </section>
+
+    <section id="cpu">
+      <h2>Processors (CPU)</h2>
+      <p>Explore the latest CPUs across Intel and AMD with performance benchmarks, comparisons, and value-for-money analysis for all user types.</p>
+    </section>
+
+    <section id="laptops">
+      <h2>Top Laptops</h2>
+      <p>From ultrabooks to gaming machines, our reviews help you find the perfect laptop for your needs, with trusted affiliate recommendations.</p>
+    </section>
+
+    <section id="monitors">
+      <h2>Monitors</h2>
+      <p>Learn about refresh rates, panel types, and display quality. Our curated monitor lists balance performance and affordability.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Techni_Fobia | Designed with passion for tech lovers</p>
+    </footer>
   </div>
 </body>
+
 </html>
