@@ -19,6 +19,16 @@
       min-height: 100vh;
       padding: 2rem;
       background: linear-gradient(145deg, #1c2233, #10141f);
+      animation: backgroundShift 15s ease infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background: linear-gradient(145deg, #1c2233, #10141f);
+      }
+      100% {
+        background: linear-gradient(145deg, #10141f, #1c2233);
+      }
     }
 
     header {
@@ -31,11 +41,33 @@
       font-weight: 800;
       color: #00ffe5;
       text-shadow: 0 0 10px #00ffe5, 0 0 20px #0061ff;
+      animation: glow 2s ease-in-out infinite alternate, floatText 5s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffe5, 0 0 20px #0061ff;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffe5, 0 0 40px #0061ff;
+      }
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0px); }
     }
 
     header p {
       font-size: 1.3rem;
       color: #ccc;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     nav {
@@ -56,11 +88,25 @@
       font-size: 1rem;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     nav a:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    }
+
+    nav a:hover::after {
+      opacity: 1;
     }
 
     section {
@@ -71,6 +117,7 @@
       border-radius: 16px;
       box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
       transition: background 0.3s;
+      animation: fadeIn 1.5s ease forwards;
     }
 
     section h2 {
@@ -92,6 +139,7 @@
       padding: 1.5rem 1rem;
       font-size: 0.9rem;
       color: #aaa;
+      animation: fadeIn 3s ease forwards;
     }
 
     @media (max-width: 600px) {
