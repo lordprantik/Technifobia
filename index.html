@@ -1,74 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Techni_Fobia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
-      background-color: #f4f7fa;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .container {
-      max-width: 500px;
-      width: 90%;
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
+
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 1.5rem;
       text-align: center;
     }
 
-    h1 {
-      color: #007bff;
+    header h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
     }
 
-    p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .link-list {
+    nav {
       display: flex;
-      flex-direction: column;
-      gap: 15px;
+      justify-content: center;
+      background-color: #343a40;
+      flex-wrap: wrap;
     }
 
-    .link-list a {
-      background-color: #ff5722;
-      color: white;
-      padding: 12px;
-      border-radius: 10px;
+    nav a {
+      color: #ffffff;
+      padding: 1rem 1.5rem;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
-    .link-list a:hover {
-      background-color: #e64a19;
+    nav a:hover {
+      background-color: #495057;
+    }
+
+    main {
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #343a40;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1f1f1f;
+      color: white;
+      margin-top: 2rem;
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Welcome to <span style="color: #0056d2;">Techni_Fobia</span></h1>
-    <p>This is your tech affiliate site.</p>
-    <div class="link-list">
-      <a href="gpus.html">Explore GPUs</a>
-      <a href="cpus.html">Compare CPUs</a>
-      <a href="laptops.html">Top Laptops</a>
-      <a href="monitors.html">Best Monitors</a>
-    </div>
-  </div>
+  <header>
+    <h1>Techni_Fobia</h1>
+    <p>Your Ultimate Tech Buying Guide</p>
+  </header>
+
+  <nav>
+    <a href="#gpu">GPU</a>
+    <a href="#cpu">CPU</a>
+    <a href="#laptops">Laptops</a>
+    <a href="#monitors">Monitors</a>
+  </nav>
+
+  <main>
+    <section id="gpu">
+      <h2>Top Graphics Cards</h2>
+      <p>Explore the best GPUs for gaming, productivity, and AI workloads. From budget to flagship – we've got you covered.</p>
+    </section>
+
+    <section id="cpu">
+      <h2>Powerful Processors</h2>
+      <p>Whether you're gaming or multitasking, choose from the best Intel and AMD CPUs based on your needs.</p>
+    </section>
+
+    <section id="laptops">
+      <h2>Laptop Recommendations</h2>
+      <p>Our curated list of best laptops by category: student, creator, gamer, and business.</p>
+    </section>
+
+    <section id="monitors">
+      <h2>Best Monitors</h2>
+      <p>Find high refresh-rate monitors, 4K displays, and ultrawides to boost your productivity and gameplay.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Techni_Fobia. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
