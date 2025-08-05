@@ -1,206 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Techni_Fobia - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #141826;
+      color: #f0f0f0;
+    }
+
+    .overlay {
+      min-height: 100vh;
+      padding: 2rem;
+      background: linear-gradient(145deg, #1c2233, #10141f);
+      animation: backgroundShift 15s ease infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% {
+        background: linear-gradient(145deg, #1c2233, #10141f);
+      }
+      100% {
+        background: linear-gradient(145deg, #10141f, #1c2233);
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #00ffe5;
+      text-shadow: 0 0 10px #00ffe5, 0 0 20px #0061ff;
+      animation: glow 2s ease-in-out infinite alternate, floatText 5s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffe5, 0 0 20px #0061ff;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffe5, 0 0 40px #0061ff;
+      }
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0px); }
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: linear-gradient(135deg, #00ffe5, #0061ff);
+      color: #000;
+      padding: 0.9rem 1.7rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      transform: scale(1.1);
+    }
+
+    nav a:hover::after {
+      opacity: 1;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+      transition: background 0.3s;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #00ffe5;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #00ffe5;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .cpu-card {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 1rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+      gap: 1.5rem;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.08);
+    }
+
+    .cpu-card img {
+      width: 100px;
+      border-radius: 8px;
+    }
+
+    .cpu-info {
+      flex: 1;
+    }
+
+    .cpu-info h3 {
+      color: #00ffe5;
+      margin: 0 0 0.5rem;
+    }
+
+    .cpu-info p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+      .cpu-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cpu-card img {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1 class="glow">Techni_Fobia</h1>
-    <p class="tagline">Your Daily Dose of Tech Knowledge</p>
+  <div class="overlay">
+    <header>
+      <h1>Techni_Fobia</h1>
+      <p>Your Trusted Guide to GPUs, CPUs, Laptops & Monitors</p>
+    </header>
+
     <nav>
-      <a href="processors.html">Processors</a>
-      <a href="#">GPUs</a>
-      <a href="#">Laptops</a>
-      <a href="#">Monitors</a>
+      <a href="#gpu">GPU</a>
+      <a href="#cpu">CPU</a>
+      <a href="#laptops">Laptops</a>
+      <a href="#monitors">Monitors</a>
     </nav>
-  </header>
 
-  <main>
-    <section class="intro">
-      <h2>Welcome to Techni_Fobia</h2>
-      <p>We bring you the latest and most reliable information about CPUs, GPUs, laptops, and monitors to help you make the smartest tech decisions.</p>
+    <section id="gpu">
+      <h2>Graphic Cards (GPU)</h2>
+      <p>Discover the best GPUs for gaming, productivity, and creative work. We cover NVIDIA, AMD, and Intel Arc with in-depth guides and affiliate links for smart buys.</p>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Techni_Fobia. All rights reserved.</p>
-  </footer>
+    <section id="cpu">
+      <h2>Processors (CPU)</h2>
+      <p>Explore the latest CPUs across Intel and AMD with performance benchmarks, comparisons, and value-for-money analysis for all user types.</p>
+
+      <div class="cpu-card">
+        <img src="https://cdn.techpowerup.com/review/amd-ryzen-9-7950x/images/card.jpg" alt="Ryzen 9 7950X">
+        <div class="cpu-info">
+          <h3>AMD Ryzen 9 7950X</h3>
+          <p>16 cores, 32 threads powerhouse for content creators and high-end gamers alike. Built on Zen 4 architecture.</p>
+        </div>
+      </div>
+
+      <div class="cpu-card">
+        <img src="https://cdn.mos.cms.futurecdn.net/2tFZnGxYTKw8qFyZ4oQ9yP.jpg" alt="Intel Core i9-13900K">
+        <div class="cpu-info">
+          <h3>Intel Core i9-13900K</h3>
+          <p>24 cores with a hybrid architecture for outstanding gaming and productivity. Built for enthusiasts.</p>
+        </div>
+      </div>
+
+      <!-- You can continue adding 8 more CPU cards here -->
+
+    </section>
+
+    <section id="laptops">
+      <h2>Top Laptops</h2>
+      <p>From ultrabooks to gaming machines, our reviews help you find the perfect laptop for your needs, with trusted affiliate recommendations.</p>
+    </section>
+
+    <section id="monitors">
+      <h2>Monitors</h2>
+      <p>Learn about refresh rates, panel types, and display quality. Our curated monitor lists balance performance and affordability.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Techni_Fobia | Designed with passion for tech lovers</p>
+    </footer>
+  </div>
 </body>
+
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Top 10 Processors - Techni_Fobia</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1 class="glow">Top 10 Best Processors</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="#">GPUs</a>
-      <a href="#">Laptops</a>
-      <a href="#">Monitors</a>
-    </nav>
-  </header>
-
-  <main class="processor-list">
-    <section>
-      <h2>1. AMD Ryzen 9 7950X</h2>
-      <img src="images/ryzen9.jpg" alt="Ryzen 9 7950X" />
-      <p>16 cores, 32 threads, based on Zen 4 architecture. Outstanding for gaming and productivity.</p>
-    </section>
-
-    <section>
-      <h2>2. Intel Core i9-13900K</h2>
-      <img src="images/i9-13900k.jpg" alt="Intel i9-13900K" />
-      <p>24 cores (8P + 16E), Raptor Lake beast. King of single-core performance.</p>
-    </section>
-
-    <section>
-      <h2>3. AMD Ryzen 7 7800X3D</h2>
-      <img src="images/7800x3d.jpg" alt="Ryzen 7 7800X3D" />
-      <p>8 cores, 3D V-Cache, excellent gaming CPU with great power efficiency.</p>
-    </section>
-
-    <section>
-      <h2>4. Intel Core i7-13700K</h2>
-      <img src="images/i7-13700k.jpg" alt="Intel i7-13700K" />
-      <p>Perfect mid-tier chip with 16 cores (8P + 8E) for gaming and editing.</p>
-    </section>
-
-    <section>
-      <h2>5. AMD Ryzen 5 7600X</h2>
-      <img src="images/7600x.jpg" alt="Ryzen 5 7600X" />
-      <p>Best budget gaming CPU on Zen 4 with great efficiency and thermals.</p>
-    </section>
-
-    <section>
-      <h2>6. Intel Core i5-13600K</h2>
-      <img src="images/i5-13600k.jpg" alt="Intel i5-13600K" />
-      <p>Top value pick with great multithreaded and gaming performance.</p>
-    </section>
-
-    <section>
-      <h2>7. Apple M2 Max</h2>
-      <img src="images/m2max.jpg" alt="Apple M2 Max" />
-      <p>Incredible performance per watt for creative professionals in MacBooks.</p>
-    </section>
-
-    <section>
-      <h2>8. AMD Ryzen Threadripper Pro 5995WX</h2>
-      <img src="images/threadripper.jpg" alt="Threadripper 5995WX" />
-      <p>64 cores for extreme workstation loads. Best for 3D rendering and simulations.</p>
-    </section>
-
-    <section>
-      <h2>9. Intel Core i3-13100F</h2>
-      <img src="images/i3-13100f.jpg" alt="Intel i3-13100F" />
-      <p>Best entry-level gaming processor for budget gamers and casual users.</p>
-    </section>
-
-    <section>
-      <h2>10. AMD Ryzen 5 5600G</h2>
-      <img src="images/5600g.jpg" alt="Ryzen 5 5600G" />
-      <p>Comes with integrated Vega graphics. Great for budget builds without a GPU.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Techni_Fobia. All rights reserved.</p>
-  </footer>
-</body>
-</html>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: #ffffff;
-  line-height: 1.6;
-  padding: 20px;
-}
-
-header {
-  text-align: center;
-  padding: 30px 10px;
-}
-
-.glow {
-  font-size: 3rem;
-  color: #fff;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
-  }
-  to {
-    text-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff;
-  }
-}
-
-.tagline {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #ddd;
-}
-
-nav {
-  margin-top: 20px;
-}
-
-nav a {
-  color: #00ffe1;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.intro {
-  text-align: center;
-  margin-top: 50px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 50px;
-  padding: 20px;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-.processor-list {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.processor-list section {
-  margin-bottom: 50px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #555;
-}
-
-.processor-list img {
-  max-width: 100%;
-  height: auto;
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-}
