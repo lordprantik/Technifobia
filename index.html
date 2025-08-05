@@ -2,121 +2,139 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Techni_Fobia</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techni_Fobia - Home</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
     body {
-      background-color: #f8f9fa;
-      color: #212529;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #f5f5f5;
+      background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: brightness(0.4);
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      padding: 2rem;
+      min-height: 100vh;
     }
 
     header {
-      background-color: #1f1f1f;
-      color: white;
-      padding: 1.5rem;
       text-align: center;
+      padding: 2rem 1rem;
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: 800;
+      color: #00ffe5;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
     }
 
     nav {
       display: flex;
-      justify-content: center;
-      background-color: #343a40;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
     }
 
     nav a {
-      color: #ffffff;
-      padding: 1rem 1.5rem;
       text-decoration: none;
+      background: linear-gradient(135deg, #00ffe5, #0061ff);
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
       font-weight: 600;
-      transition: background 0.3s;
+      transition: transform 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #495057;
-    }
-
-    main {
-      padding: 2rem 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      transform: scale(1.1);
     }
 
     section {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      margin-bottom: 2rem;
     }
 
     section h2 {
-      font-size: 1.5rem;
+      border-bottom: 2px solid #00ffe5;
+      padding-bottom: 0.5rem;
       margin-bottom: 1rem;
-      color: #343a40;
+      font-size: 2rem;
     }
 
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: #1f1f1f;
-      color: white;
-      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Techni_Fobia</h1>
-    <p>Your Ultimate Tech Buying Guide</p>
-  </header>
+  <div class="overlay">
+    <header>
+      <h1>Techni_Fobia</h1>
+      <p>Your Trusted Guide to GPUs, CPUs, Laptops & Monitors</p>
+    </header>
 
-  <nav>
-    <a href="#gpu">GPU</a>
-    <a href="#cpu">CPU</a>
-    <a href="#laptops">Laptops</a>
-    <a href="#monitors">Monitors</a>
-  </nav>
+    <nav>
+      <a href="#gpu">GPU</a>
+      <a href="#cpu">CPU</a>
+      <a href="#laptops">Laptops</a>
+      <a href="#monitors">Monitors</a>
+    </nav>
 
-  <main>
     <section id="gpu">
-      <h2>Top Graphics Cards</h2>
-      <p>Explore the best GPUs for gaming, productivity, and AI workloads. From budget to flagship – we've got you covered.</p>
+      <h2>Graphic Cards (GPU)</h2>
+      <p>Discover the best GPUs for gaming, productivity, and creative work. We cover NVIDIA, AMD, and Intel Arc with in-depth guides and affiliate links for smart buys.</p>
     </section>
 
     <section id="cpu">
-      <h2>Powerful Processors</h2>
-      <p>Whether you're gaming or multitasking, choose from the best Intel and AMD CPUs based on your needs.</p>
+      <h2>Processors (CPU)</h2>
+      <p>Explore the latest CPUs across Intel and AMD with performance benchmarks, comparisons, and value-for-money analysis for all user types.</p>
     </section>
 
     <section id="laptops">
-      <h2>Laptop Recommendations</h2>
-      <p>Our curated list of best laptops by category: student, creator, gamer, and business.</p>
+      <h2>Top Laptops</h2>
+      <p>From ultrabooks to gaming machines, our reviews help you find the perfect laptop for your needs, with trusted affiliate recommendations.</p>
     </section>
 
     <section id="monitors">
-      <h2>Best Monitors</h2>
-      <p>Find high refresh-rate monitors, 4K displays, and ultrawides to boost your productivity and gameplay.</p>
+      <h2>Monitors</h2>
+      <p>Learn about refresh rates, panel types, and display quality. Our curated monitor lists balance performance and affordability.</p>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Techni_Fobia. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 Techni_Fobia | Designed with passion for tech lovers</p>
+    </footer>
+  </div>
 </body>
 
 </html>
